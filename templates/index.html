@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Rasberry Pi Weather Station</title>
+</head>
+<body>
+    <h2>Raspberry Pi weather station</h2>
+    <p>Readings retrieved from Raspberri PI sensehat</p>
+    <h3 id="loading">Loading...</h3>
+    <table id="readings">
+        <thead>
+            <tr>
+                <th>Measurement</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature</td>
+                <td id="temperature">0</td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td id="humidity">0</td>
+            </tr>
+            <tr>
+                <td>Pressure</td>
+                <td id="pressure">0</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Weather API</h2>
+    <p>Readings from online weather API</p>
+    <table id="weatherAPI">
+        <thead>
+            <tr>
+                <th>Measurement</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature</td>
+                <td id="weatherAPI_temperature"></td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td id="weatherAPI_humidity"></td>
+            </tr>
+            <tr>
+                <td>Pressure</td>
+                <td id="weatherAPI_pressure"></td>
+            </tr>
+            <tr>
+                <td>Weather icon</td>
+                <td id="weatherAPI_icon"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="updateValues">Update values</button>
+    <script src="{{ url_for('static', filename='jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
